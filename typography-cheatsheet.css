@@ -1,0 +1,64 @@
+html {
+    background: whitesmoke;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding: 0;
+}
+#banner {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    padding: 5px;
+    pointer-events: none;
+    transition: 300ms;
+}
+#banner span {
+    background: rgba(0,0,0,.7);
+    padding: 5px;
+    font-size: 7vh;
+    color: white;
+}
+#banner span:empty {
+    display: none;
+}
+svg {
+    display: block; 
+    height: 80vh;
+    margin: 0 auto;
+    max-width: 100%;
+}
+#elements path:hover, #elements polygon:hover {
+    fill:#ccc;
+    transition: 300ms;
+}
+footer {
+    text-align: right;
+    padding: 5px;
+    display: block;
+    font-size: 9px;
+}
+footer a {
+    color: #000;
+}
+header {
+    padding: 5px 10px;
+    display:block;
+    background: #333;
+    color: #f8f8f8;
+    width: calc(100% - 20px);
+}
+h1 {
+    font-size: 3vw;
+    font-weight: normal;
+    margin: 0;
+}
+p {
+    font-size: 1.5vw;
+    font-weight: normal;
+    margin: 5px 0;
+}
+footer p {
+    font-size: 1vw;
+}
