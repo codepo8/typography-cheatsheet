@@ -17,9 +17,9 @@ const setfocusableelements = () => {
 	elements.forEach(element => element.setAttribute('tabindex', 0));
 }
 const handleselect = (ev) => {
-	const rect = ev.target.getBoundingClientRect();
+	const { width, height, top, left } = ev.target.getBoundingClientRect();
 	if (['path','polygon','g'].indexOf(ev.target.nodeName.toLowerCase()) !== -1){
-		setbanner((information[ev.target.id]), rect.left + rect.width, rect.top + rect.height);
+		setbanner((information[ev.target.id]), left + width, top + height);
 		ev.preventDefault();
 	}
 };
