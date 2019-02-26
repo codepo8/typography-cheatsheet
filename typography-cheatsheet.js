@@ -10,14 +10,21 @@ const setbanner = (msg, x, y) => {
 const seteventhandlers = () => {
 	let elements = document.querySelector('#elements');
 	elements.addEventListener('click', handleselect);
+	[...elements.querySelectorAll('[id^="e"]')].forEach(element => element.addEventListener('focus', handleselect));
+}
+const setfocusableelements = () => {
+	const elements = document.querySelectorAll('#elements [id^="e"]');
+	elements.forEach(element => element.setAttribute('tabindex', 0));
 }
 const handleselect = (ev) => {
+	const rect = ev.target.getBoundingClientRect();
 	if (['path','polygon','g'].indexOf(ev.target.nodeName.toLowerCase()) !== -1){
-		setbanner((information[ev.target.id]), ev.pageX, ev.pageY);
+		setbanner((information[ev.target.id]), rect.left + rect.width, rect.top + rect.height);
 		ev.preventDefault();
 	}
 };
 const init = () => {
+	setfocusableelements();
 	seteventhandlers();
 }
 init();

@@ -29,9 +29,12 @@ svg {
     margin: 0 auto;
     max-width: 100%;
 }
-#elements path:hover, #elements polygon:hover {
-    fill:#ccc;
+#elements path, #elements polygon {
     transition: 300ms;
+}
+#elements path:hover, #elements polygon:hover,
+#elements path:focus, #elements polygon:focus {
+    fill:#ccc;
 }
 footer {
     text-align: right;
