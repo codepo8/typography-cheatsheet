@@ -7,10 +7,15 @@ const setbanner = (msg, x, y) => {
 	banner.style.top = y + "px";
 	banner.style.left = x + "px";
 }
+const clearbanner = () => {
+	banner.querySelector('span').innerText = '';
+}
 const seteventhandlers = () => {
 	let elements = document.querySelector('#elements');
+	let shapes = [...elements.querySelectorAll('[id^="e"]')];
 	elements.addEventListener('click', handleselect);
-	[...elements.querySelectorAll('[id^="e"]')].forEach(element => element.addEventListener('focus', handleselect));
+	shapes.forEach(element => element.addEventListener('focus', handleselect));
+	shapes.forEach(element => element.addEventListener('blur', clearbanner));
 }
 const setfocusableelements = () => {
 	const elements = document.querySelectorAll('#elements [id^="e"]');
